@@ -18,7 +18,7 @@ module load pytorch/2.3.1
 export MASTER_ADDR=$(hostname)
 export MASTER_PORT=29507
 export OMP_NUM_THREADS=8
-export NCCL_DEBUG=INFO
+#export NCCL_DEBUG=INFO
 
 set -x
 
