@@ -2,6 +2,7 @@
 #SBATCH -J hf-accelerate-example
 #SBATCH -q debug
 #SBATCH -C gpu
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-node=4
 #SBATCH --cpus-per-task=128
