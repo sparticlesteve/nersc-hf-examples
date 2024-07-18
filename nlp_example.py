@@ -1,3 +1,7 @@
+# This script taken from
+# https://github.com/huggingface/accelerate/raw/main/examples/nlp_example.py
+# and modified with some rank printouts during initialization.
+
 # Copyright 2021 The HuggingFace Inc. team. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
