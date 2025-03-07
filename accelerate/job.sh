@@ -9,21 +9,21 @@
 #SBATCH --time 10
 
 # Environment setup
-#module use /global/homes/s/sfarrell/WorkAreas/software/modulefiles/src
-#module load pytorch/2.1.0-cu12
-#module load pytorch/2.1.0-cu12 gcc-native/12.3
-#module load pytorch/2.0.1
-module load pytorch/2.3.1
+module use /global/common/software/nersc/pe/modulefiles/latest
+module load pytorch/2.6.0
 
+# Use scratch for huggingface cache
+export HF_HOME=$SCRATCH/cache/huggingface
+
+# Distributed training configuration
 export MASTER_ADDR=$(hostname)
 export MASTER_PORT=29507
+
+# Other settings
 export OMP_NUM_THREADS=8
 #export NCCL_DEBUG=INFO
 
 set -x
-
-# Set the HF cache directory
-export HF_HOME=$SCRATCH/cache/huggingface
 
 # Using HF Accelerate Launch
 srun -l bash -c "
